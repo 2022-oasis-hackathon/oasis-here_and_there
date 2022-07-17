@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "630246720158",
+    "project_id": "oasis-8f075",
+    "storage_bucket": "oasis-8f075.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630246720158:android:a1a584a2ad196f46eff18f",
+        "android_client_info": {
+          "package_name": "com.mirror.oasis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630246720158-q1lcgeft4gqoh36lajunsh1hgp9eo9pk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHxXPU_HOMccLoh1OOQYldr5lYik7mUuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630246720158-q1lcgeft4gqoh36lajunsh1hgp9eo9pk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
