@@ -23,7 +23,7 @@ public class HomeData {
     private String location;
     private String detailLocation;
     private String name;
-    private String detail;
+    private String detail; // 세부유형
     private String date1; // 입주가능일
     private String date2; // 신청기간
     private String date3; // 운영기간

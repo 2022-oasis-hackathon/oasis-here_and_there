@@ -37,17 +37,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        /*
         Intent intent = getIntent();
         myKey = intent.getStringExtra("key");
         myId = intent.getStringExtra("id");
         myProfile = intent.getStringExtra("profile");
         myNickName = intent.getStringExtra("nickName");
-
-    /*
-        myKey = "-N7EfXAxv1tz6SjOyGtc";
-        myId = "test@naver.com";
-        myProfile = "https://firebasestorage.googleapis.com/v0/b/oasis-8f075.appspot.com/o/users%2F-N7EfXAxv1tz6SjOyGtc.jpg?alt=media&token=6d80b09d-9ec6-449b-8d28-37e4bf8bbcbb";
 */
+
+        myKey = "-N7GXhGksk9Y0GP_7b5i";
+        myId = "test123@naver.com";
+        myNickName = "귀농짱";
+        myProfile = "https://firebasestorage.googleapis.com/v0/b/oasis-8f075.appspot.com/o/users%2F-N7GXhGksk9Y0GP_7b5i.jpg?alt=media&token=18394287-aef8-42f4-8785-5480b07d86ad";
+
         Log.d(TAG, myKey + " " + myId + " " + myProfile);
 
 

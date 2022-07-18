@@ -20,7 +20,7 @@ import java.util.List;
 class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> implements Filterable {
     private List<HomeData> unFilteredlist;
     private List<HomeData> filteredList;
-    static public View.OnClickListener onClickListener;
+    static public View.OnClickListener onClick;
 
     @Override
     public Filter getFilter() {
@@ -60,11 +60,6 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
         public MyViewHolder(View v) {
             super(v);
 
-            rootView = v;
-            rootView.setEnabled(true);
-            rootView.setClickable(true);
-            rootView.setOnClickListener(onClickListener);
-
             photo = (ImageView) v.findViewById(R.id.photo);
             location = (TextView) v.findViewById(R.id.location);
             name = (TextView) v.findViewById(R.id.name);
@@ -73,13 +68,17 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
             date2 = (TextView) v.findViewById(R.id.date2);
             date3 = (TextView) v.findViewById(R.id.date3);
 
+            rootView = v;
+            rootView.setEnabled(true);
+            rootView.setClickable(true);
+            rootView.setOnClickListener(onClick);
         }
     }
 
     public HomeAdapter(List<HomeData> homeDataList, View.OnClickListener onClickListener) {
         this.filteredList = homeDataList;
         this.unFilteredlist = homeDataList;
-        this.onClickListener = onClickListener;
+        onClick = onClickListener;
     }
 
     @Override
@@ -95,7 +94,7 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
     public void onBindViewHolder(HomeAdapter.MyViewHolder holder, int position) {
 
         holder.rootView.setTag(position);
-
+        System.out.println("Click!!!!");
         Uri uri = Uri.parse(filteredList.get(position).getFirstPhoto());
         Glide.with(holder.rootView.getContext())
                 .load(uri)
@@ -103,10 +102,10 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
 
         holder.location.setText(filteredList.get(position).getLocation());
         holder.name.setText(filteredList.get(position).getName());
-        holder.detail.setText("세부유형: " + filteredList.get(position).getDetail());
+        holder.detail.setText("세부유형:  " + filteredList.get(position).getDetail());
         holder.date1.setText("입주가능일: " + filteredList.get(position).getDate1());
-        holder.date2.setText("신청기간: " + filteredList.get(position).getDate2());
-        holder.date3.setText("운영기간: " + filteredList.get(position).getDate3());
+        holder.date2.setText("신청기간:  " + filteredList.get(position).getDate2());
+        holder.date3.setText("운영기간:  " + filteredList.get(position).getDate3());
 
 
     }

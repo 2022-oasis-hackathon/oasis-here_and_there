@@ -32,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.mirror.oasis.DetailActivity;
 import com.mirror.oasis.JoinActivity;
 import com.mirror.oasis.MainActivity;
 import com.mirror.oasis.R;
@@ -57,8 +58,6 @@ public class HomeFragment extends Fragment {
     private TextView userId;
 
     private List<HomeData> homeDataList = new ArrayList<>();
-    private List<HomeData> tempHomeDataList = new ArrayList<>();
-    private List<HomeData> temp2HomeDataList = new ArrayList<>();
 
     private RecyclerView homeRecyclerView;
     private HomeAdapter homeAdapter;
@@ -107,12 +106,13 @@ public class HomeFragment extends Fragment {
         homeAdapter = new HomeAdapter(homeDataList, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Object tag = v.getTag();
-
+                Object tag = view.getTag();
                 if (tag != null) {
                     int position = (int)tag;
                     Toast.makeText(getActivity(), position + "", Toast.LENGTH_SHORT).show();
-
+                    Intent intent = new Intent(getActivity(), DetailActivity.class);
+                    intent.putExtra("key", homeDataList.get(position).getKey());
+                    startActivity(intent);
                 }
             }
         });
@@ -132,7 +132,6 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                     HomeData homeData = snapshot1.getValue(HomeData.class);
                     homeDataList.add(homeData);
-                    temp2HomeDataList.add(homeData);
                 }
                 homeAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
