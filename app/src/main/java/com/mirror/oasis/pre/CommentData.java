@@ -5,6 +5,7 @@ class CommentData {
     private String comment;
     private String time;
 
+    public CommentData() {}
     public CommentData(String nickName, String comment, String time) {
         this.nickName = nickName;
         this.comment = comment;

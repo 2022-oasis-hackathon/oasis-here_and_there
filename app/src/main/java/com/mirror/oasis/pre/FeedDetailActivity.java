@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -26,9 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mirror.oasis.DetailAdapter;
+import com.mirror.oasis.MainActivity;
 import com.mirror.oasis.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -57,7 +61,7 @@ public class FeedDetailActivity extends AppCompatActivity {
     private RecyclerView commentRecyclerView;
     private CommentAdapter commentAdapter;
     private RecyclerView.LayoutManager commentLayoutManager;
-    private List<CommentData> commentDataList;
+    private List<CommentData> commentDataList = new ArrayList<>();
 
     String key;
 
@@ -77,6 +81,11 @@ public class FeedDetailActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == EditorInfo.IME_ACTION_DONE) {
                     String commentData = textView.getText().toString();
+                    SimpleDateFormat format1 = new SimpleDateFormat ( "HH:mm");
+                    Calendar time = Calendar.getInstance();
+                    String format_time1 = format1.format(time.getTime());
+                    commentRef.child(key).push().setValue(new CommentData(MainActivity.myNickName, commentData, format_time1));
+                    comment.setText("");
                     return true;
                 }
                 return false;
@@ -100,8 +109,8 @@ public class FeedDetailActivity extends AppCompatActivity {
         commentRecyclerView.setHasFixedSize(true);
         commentLayoutManager = new LinearLayoutManager(this);
         commentRecyclerView.setLayoutManager(commentLayoutManager);
-       // commentAdapter = new CommentAdapter(photoDataList);
-       // commentRecyclerView.setAdapter(commentAdapter);
+        commentAdapter = new CommentAdapter(commentDataList);
+        commentRecyclerView.setAdapter(commentAdapter);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         profile = (CircleImageView) findViewById(R.id.profile);
@@ -147,14 +156,19 @@ public class FeedDetailActivity extends AppCompatActivity {
             }
         });
 
+
         commentRef.child(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+                commentDataList.clear();
                 for (DataSnapshot snapshot1: snapshot.getChildren()) {
                     CommentData commentData = snapshot1.getValue(CommentData.class);
                     commentDataList.add(commentData);
+
+                    Log.d("asdasd", commentData.getComment());
                 }
-                detailAdapter.notifyDataSetChanged();
+                commentAdapter.notifyDataSetChanged();
+
             }
 
             @Override
@@ -162,5 +176,7 @@ public class FeedDetailActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
 }
