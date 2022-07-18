@@ -8,13 +8,101 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bannerRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="150dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pre"
-        android:textSize="50dp"
-        android:layout_centerInParent="true"/>
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_below="@+id/bannerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/feed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/feedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피드"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:fontFamily="@font/gmm"
+                android:layout_centerInParent="true"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/feedLayout"
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/boardText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="게시판"
+                android:textColor="#CAC9C9"
+                android:textSize="16dp"
+                android:fontFamily="@font/gmm"
+                android:layout_centerInParent="true"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/boardLayout"
+                android:background="#CAC9C9"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feedRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/second"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/boardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/second"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/writing"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/writing"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp" />
 
 </RelativeLayout>
