@@ -79,6 +79,7 @@ public class CreateActivity extends AppCompatActivity {
     String myId;
     String myKey;
     String myProfile;
+    String myNickName;
 
 
     ImageView tempPhoto;
@@ -91,6 +92,7 @@ public class CreateActivity extends AppCompatActivity {
 
         myId = MainActivity.myId;
         myKey = MainActivity.myKey;
+        myNickName = MainActivity.myNickName;
         myProfile = MainActivity.myProfile;
 
         cancelButton = (ImageView) findViewById(R.id.cancelButton);
@@ -161,7 +163,7 @@ public class CreateActivity extends AppCompatActivity {
                                             photoUri.add(uri);
                                             firstUri = uri;
                                             System.out.println("test: ! " + myProfile);
-                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
+                                            CreateData create = new CreateData(myId, myNickName, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
                                             feedRef.child(key).setValue(create);
                                             progress.setVisibility(View.GONE);
                                             finish();
@@ -196,7 +198,7 @@ public class CreateActivity extends AppCompatActivity {
                                         public void onSuccess(Uri uri) {
                                             photoUri.add(uri);
                                             firstUri = uri;
-                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
+                                            CreateData create = new CreateData(myId, myNickName, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
                                             boardRef.child(key).setValue(create);
                                             progress.setVisibility(View.GONE);
                                             finish();

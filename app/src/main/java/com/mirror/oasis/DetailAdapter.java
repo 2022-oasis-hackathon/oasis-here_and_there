@@ -12,7 +12,7 @@ import com.mirror.oasis.pre.PhotoData;
 
 import java.util.List;
 
-class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.MyViewHolder>{
+public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.MyViewHolder>{
 
     private List<PhotoData> dataList;
 

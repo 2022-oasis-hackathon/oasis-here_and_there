@@ -195,14 +195,13 @@ public class PreFragment extends Fragment {
         feedAdapter = new FeedAdapter(feedDataList, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Object tag = v.getTag();
+                Object tag = view.getTag();
 
                 if (tag != null) {
                     int position = (int)tag;
-                   // Intent intent = new Intent(getActivity(), StoreActivity.class);
-                    //intent.putExtra("position", String.valueOf(position));
-
-                    //startActivity(intent);
+                    Intent intent = new Intent(getActivity(), FeedDetailActivity.class);
+                    intent.putExtra("key", feedDataList.get(position).getKey());
+                    startActivity(intent);
 
                 }
             }
@@ -217,7 +216,7 @@ public class PreFragment extends Fragment {
         boardAdapter = new BoardAdapter(boardDataList, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Object tag = v.getTag();
+                Object tag = view.getTag();
 
                 if (tag != null) {
                     int position = (int)tag;

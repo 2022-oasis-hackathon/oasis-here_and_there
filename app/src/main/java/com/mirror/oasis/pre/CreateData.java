@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 class CreateData {
     private String id;
+    private String nickName;
     private String title;
     private String content;
     private ArrayList<String> photoKeys;
@@ -13,8 +14,9 @@ class CreateData {
 
     public CreateData() {}
 
-    public CreateData(String id, String title, String content, ArrayList<String> photoKeys, String key, String firstUri, String profile) {
+    public CreateData(String id, String nickName, String title, String content, ArrayList<String> photoKeys, String key, String firstUri, String profile) {
         this.id = id;
+        this.nickName = nickName;
         this.title = title;
         this.content = content;
         this.photoKeys = photoKeys;
@@ -29,6 +31,14 @@ class CreateData {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getTitle() {

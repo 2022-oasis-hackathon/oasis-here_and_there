@@ -109,7 +109,6 @@ public class HomeFragment extends Fragment {
                 Object tag = view.getTag();
                 if (tag != null) {
                     int position = (int)tag;
-                    Toast.makeText(getActivity(), position + "", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
                     intent.putExtra("key", homeDataList.get(position).getKey());
                     startActivity(intent);
