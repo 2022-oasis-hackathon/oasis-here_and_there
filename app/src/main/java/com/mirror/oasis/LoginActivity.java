@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private ProgressBar progressBar;
 
     private EditText userId, userPassword;
     private Button loginButton, memberButton;
@@ -33,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         userId = (EditText) findViewById(R.id.userId);
         userPassword = (EditText) findViewById(R.id.userPassword);
         loginButton = (Button) findViewById(R.id.loginButton);
@@ -43,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v){
                 String id = userId.getText().toString();
                 String password = userPassword.getText().toString();
-
+                progressBar.setVisibility(View.VISIBLE);
                 if (id.length() <= 0 || password.length() <= 0) {
                     Toast.makeText(LoginActivity.this, "입력사항을 확인해 주세요.", Toast.LENGTH_SHORT).show();
                     return;
@@ -63,8 +67,12 @@ public class LoginActivity extends AppCompatActivity {
                         for (UserInfo userInfo : userInfos) {
                             if (userInfo.getId().equals(id) && userInfo.getPassword().equals(password)) {
                                 check = false;
+
+                                progressBar.setVisibility(View.GONE);
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                intent.putExtra("myId", id);
+                                intent.putExtra("key", userInfo.getKey());
+                                intent.putExtra("id", userInfo.getId());
+                                intent.putExtra("profile", userInfo.getProfileUri());
                                 startActivity(intent);
                                 finish();
                             }
@@ -86,6 +94,11 @@ public class LoginActivity extends AppCompatActivity {
         memberButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intent);
+                finish();
+                /*
                 String id = userId.getText().toString();
                 String password = userPassword.getText().toString();
 
@@ -124,6 +137,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
+
+                 */
             }
         });
     }

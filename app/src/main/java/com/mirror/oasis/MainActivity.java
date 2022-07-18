@@ -27,11 +27,26 @@ public class MainActivity extends AppCompatActivity {
     MyPageFragment myPageFragment = new MyPageFragment();
 
     public static String myId;
+    public static String myKey;
+    public static String myProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*
+        Intent intent = getIntent();
+        myKey = intent.getStringExtra("key");
+        myId = intent.getStringExtra("id");
+        myProfile = intent.getStringExtra("profile");
+*/
+        myKey = "-N7EfXAxv1tz6SjOyGtc";
+        myId = "test@naver.com";
+        myProfile = "https://firebasestorage.googleapis.com/v0/b/oasis-8f075.appspot.com/o/users%2F-N7EfXAxv1tz6SjOyGtc.jpg?alt=media&token=6d80b09d-9ec6-449b-8d28-37e4bf8bbcbb";
+
+        Log.d(TAG, myKey + " " + myId + " " + myProfile);
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
