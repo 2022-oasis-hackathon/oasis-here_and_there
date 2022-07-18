@@ -161,7 +161,7 @@ public class CreateActivity extends AppCompatActivity {
                                             photoUri.add(uri);
                                             firstUri = uri;
                                             System.out.println("test: ! " + myProfile);
-                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), myProfile);
+                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
                                             feedRef.child(key).setValue(create);
                                             progress.setVisibility(View.GONE);
                                             finish();
@@ -196,7 +196,7 @@ public class CreateActivity extends AppCompatActivity {
                                         public void onSuccess(Uri uri) {
                                             photoUri.add(uri);
                                             firstUri = uri;
-                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), myProfile);
+                                            CreateData create = new CreateData(myId, ti, co, photoKeys, key, firstUri.toString(), MainActivity.myProfile);
                                             boardRef.child(key).setValue(create);
                                             progress.setVisibility(View.GONE);
                                             finish();

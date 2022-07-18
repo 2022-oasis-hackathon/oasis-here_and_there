@@ -1,0 +1,296 @@
+   /*
+        location: 전라남도 순천시
+        detaillocation: 전라남도 순천시 월등면 계월길 138
+        title: 순천향매실마을
+        detail: 귀농형(일반)
+        date: 2022.08.01
+        date2: 2022.06.25~2022.07.24 // 신청기간
+        date3: 2022.08.01~2022.09.30 // 운영기간
+        info: 지리산의 끝자락 문유산의 정기를 받은 순천향매실마을은 30만평의 매실나무가 조성되어 마을전체가 매실농사를 지으며 전국에서 매실이 가장 많이 나는 마을입니다.
+27가구 정도의 귀농귀촌 농가가 마을과 조화를 이루며 활기차게 살아가는 마을입니다.
+        product: 매실,복숭아
+        representative: 이정x
+        phone: 01033044680
+        writer: 지자체
+         */
+
+        /*
+        // home sample Data
+        byte[] data1 = getData(R.drawable.sample1);
+        byte[] data2 = getData(R.drawable.sample2);
+        byte[] data3 = getData(R.drawable.sample3);
+        byte[] data4 = getData(R.drawable.sample4);
+        byte[] data5 = getData(R.drawable.sample5);
+        byte[] data6 = getData(R.drawable.sample6);
+        ArrayList<byte[]> dataList = new ArrayList<>();
+        dataList.add(data1);
+        dataList.add(data2);
+        dataList.add(data3);
+        dataList.add(data4);
+        dataList.add(data5);
+        dataList.add(data6);
+
+        String realKey = homeRef.push().getKey();
+        ArrayList<String> photoKeys = new ArrayList<>();
+        ArrayList<Uri> photoUri = new ArrayList<>();
+        for (int i = 0; i < dataList.size(); i++) {
+            byte[] data = dataList.get(i);
+            String key = homeRef.push().getKey();
+            photoKeys.add(key);
+            StorageReference tempStorage = storageRef.child("datas/" + key + ".jpg");
+            UploadTask uploadTask = tempStorage.putBytes(data);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    if (firstCheck) {
+                        tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                photoUri.add(uri);
+                                Uri photo = uri;
+                                HomeData homeData = new HomeData(realKey,"전라남도 순천시", "전라남도 순천시 월등면 계월길 138",
+                                       "순천향매실마을",
+                                        "귀농형(일반)",
+                                        "2022.08.01",
+                                        "2022.06.25~2022.07.24",
+                                        "2022.08.01~2022.09.30",
+                                        "지리산의 끝자락 문유산의 정기를 받은 순천향매실마을은 30만평의 매실나무가 조성되어 마을전체가 매실농사를 지으며 전국에서 매실이 가장 많이 나는 마을입니다.\n" +
+                                                "27가구 정도의 귀농귀촌 농가가 마을과 조화를 이루며 활기차게 살아가는 마을입니다.",
+                                        "매실, 복숭아",
+                                        "이정x",
+                                        "01033044680",
+                                        "지자체",
+                                        photo.toString(),
+                                        photoKeys);
+                                homeRef.child(realKey).setValue(homeData);
+                                // String key, String location, String detailLocation, String name,
+                                // String detail, String date1, String date2, String date3, String info, String product,
+                                // String representative, String phone, String writer, String firstPhoto, ArrayList<String> photoKeys
+                                System.out.println("데이터: " + photo);
+                            }
+                        });
+                        firstCheck =  false;
+                    }
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure( Exception e) {
+                }
+            });
+        }
+*/
+
+
+
+        /*
+        byte[] data1 = getData(R.drawable.sample11);
+        byte[] data2 = getData(R.drawable.sample22);
+        byte[] data3 = getData(R.drawable.sample33);
+        byte[] data4 = getData(R.drawable.sample44);
+        ArrayList<byte[]> dataList = new ArrayList<>();
+        dataList.add(data1);
+        dataList.add(data2);
+        dataList.add(data3);
+        dataList.add(data4);
+
+        String realKey = homeRef.push().getKey();
+        ArrayList<String> photoKeys = new ArrayList<>();
+        ArrayList<Uri> photoUri = new ArrayList<>();
+        for (int i = 0; i < dataList.size(); i++) {
+            byte[] data = dataList.get(i);
+            String key = homeRef.push().getKey();
+            photoKeys.add(key);
+            StorageReference tempStorage = storageRef.child("datas/" + key + ".jpg");
+            UploadTask uploadTask = tempStorage.putBytes(data);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    if (firstCheck) {
+                        tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                photoUri.add(uri);
+                                Uri photo = uri;
+                                // 010-6650-0052
+                                HomeData homeData = new HomeData(realKey,"전라남도 구례군", "전라남도 구례군 마산면 광평1길 59",
+                                        "지리산효장수마을",
+                                        "귀촌형(일반)",
+                                        "2022.09.01",
+                                        "2022.07.18~2022.08.12",
+                                        "2022.09.01~2022.11.30",
+                                        "지리산/섬진강 인접 4개 마을로 구성, 귀농귀촌이 활발한 마을 친환경 농업, 과수원, 재배시설, 조경 등 다양한 농업 기반 보유 마을소재(쌍산재, 당몰샘) 및 인접관광지(화엄사,운조루 등) 다수",
+                                        "매실, 복숭아",
+                                        "김형x",
+                                        "01066500052",
+                                        "지자체",
+                                        photo.toString(),
+                                        photoKeys);
+                                homeRef.child(realKey).setValue(homeData);
+                                // String key, String location, String detailLocation, String name,
+                                // String detail, String date1, String date2, String date3, String info, String product,
+                                // String representative, String phone, String writer, String firstPhoto, ArrayList<String> photoKeys
+                                System.out.println("데이터: " + photo);
+                            }
+                        });
+                        firstCheck =  false;
+                    }
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure( Exception e) {
+                }
+            });
+        }
+        */
+
+        /*
+        byte[] data1 = getData(R.drawable.sample111);
+        byte[] data2 = getData(R.drawable.sample222);
+        byte[] data3 = getData(R.drawable.sample333);
+        byte[] data4 = getData(R.drawable.sample444);
+        byte[] data5 = getData(R.drawable.sample555);
+        ArrayList<byte[]> dataList = new ArrayList<>();
+        dataList.add(data1);
+        dataList.add(data2);
+        dataList.add(data3);
+        dataList.add(data4);
+        dataList.add(data5);
+
+        String realKey = homeRef.push().getKey();
+        ArrayList<String> photoKeys = new ArrayList<>();
+        ArrayList<Uri> photoUri = new ArrayList<>();
+        for (int i = 0; i < dataList.size(); i++) {
+            byte[] data = dataList.get(i);
+            String key = homeRef.push().getKey();
+            photoKeys.add(key);
+            StorageReference tempStorage = storageRef.child("datas/" + key + ".jpg");
+            UploadTask uploadTask = tempStorage.putBytes(data);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    if (firstCheck) {
+                        tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                photoUri.add(uri);
+                                Uri photo = uri;
+                                // 010-6650-0052
+                                HomeData homeData = new HomeData(realKey,
+                                        "전라북도 군산시",
+                                        "전라북도 군산시 성산면 오성로 134-17 이음협동조합",
+                                        "이음협동조합",
+                                        "프로젝트형(일반)",
+                                        "2022.08.01",
+                                        "2022.06.29~2022.07.25",
+                                        "2022.08.03~2022.11.02",
+                                        "나포면은 인구 2,163명의 작은 농촌 마을로 군산의 주봉 망해산과 금강이 둘러싸고 있는 국제적인 철새도래지이며 기초생활거점 육성사업 추진중에 있으며 문화 활동 증진, 복지체계지원, 교육인프라 형성, 사회적 경제 구조 구축 등을 비전으로 ‘나리터’ 센터를 신축 예정이며 이 과정에 주민 역량강화교육을 통해 공동체 활동 역량을 높여가고 있음",
+                                        "버섯",
+                                        "박세x",
+                                        "01063385034",
+                                        "지자체",
+                                        photo.toString(),
+                                        photoKeys);
+                                homeRef.child(realKey).setValue(homeData);
+                                // String key, String location, String detailLocation, String name,
+                                // String detail, String date1, String date2, String date3, String info, String product,
+                                // String representative, String phone, String writer, String firstPhoto, ArrayList<String> photoKeys
+                                System.out.println("데이터: " + photo);
+                            }
+                        });
+                        firstCheck =  false;
+                    }
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure( Exception e) {
+                }
+            });
+        }
+*/
+        /*
+             Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sample2);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        String key = myRef.push().getKey();
+        StorageReference tempStorage = storageRef.child("homes/" + key + ".jpg");
+        UploadTask uploadTask = tempStorage.putBytes(data);
+        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Uri photo = uri;
+
+                           // private String location;
+                           // private String title;
+                           // private String detail;
+                           // private String date;
+                           // private String photo;
+
+                       //HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
+                        //HomeData homeData = new HomeData(key, "전라북도 춘천시", "은행나무마을", "귀촌형(중심지거주)", "2022.04.25", photo.toString());
+                        //HomeData homeData = new HomeData(key, "전라남도 삼척시", "신리너와마을", "귀농형(일반)", "2022.03.31", photo.toString());
+
+                        HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
+                        myRef.child(key).setValue(homeData);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure( Exception e) {
+            }
+        });
+
+
+         */
+
+
+        /*
+        sampleDataSave
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sample2);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        String key = myRef.push().getKey();
+        StorageReference tempStorage = storageRef.child("homes/" + key + ".jpg");
+        UploadTask uploadTask = tempStorage.putBytes(data);
+        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Uri photo = uri;
+
+                           // private String location;
+                           // private String title;
+                           // private String detail;
+                           // private String date;
+                           // private String photo;
+
+                       //HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
+                        //HomeData homeData = new HomeData(key, "전라북도 춘천시", "은행나무마을", "귀촌형(중심지거주)", "2022.04.25", photo.toString());
+                        //HomeData homeData = new HomeData(key, "전라남도 삼척시", "신리너와마을", "귀농형(일반)", "2022.03.31", photo.toString());
+
+                        HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
+                        myRef.child(key).setValue(homeData);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure( Exception e) {
+            }
+        });
+*/

@@ -1,6 +1,9 @@
 package com.mirror.oasis;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,12 +13,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.mirror.oasis.home.HomeData;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,14 +37,18 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
+    DatabaseReference homeRef = database.getReference("datas");
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
 
     ArrayList<UserInfo> userInfos = new ArrayList<UserInfo>();
-
+    boolean firstCheck = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         userId = (EditText) findViewById(R.id.userId);
@@ -72,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("key", userInfo.getKey());
                                 intent.putExtra("id", userInfo.getId());
+                                intent.putExtra("nickName", userInfo.getNickName());
                                 intent.putExtra("profile", userInfo.getProfileUri());
                                 startActivity(intent);
                                 finish();
@@ -141,5 +156,13 @@ public class LoginActivity extends AppCompatActivity {
                  */
             }
         });
+    }
+
+    public byte[] getData(int i) {
+        Bitmap bitmap = BitmapFactory.decodeResource(LoginActivity.this.getResources(), i);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+        return data;
     }
 }

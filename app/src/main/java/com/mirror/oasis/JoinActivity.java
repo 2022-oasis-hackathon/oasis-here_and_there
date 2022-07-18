@@ -48,7 +48,7 @@ public class JoinActivity extends AppCompatActivity {
     StorageReference storageRef = storage.getReference();
 
     private Button memberButton;
-    private EditText userId, userPassword, userPasswordCheck;
+    private EditText userId, nickName, userPassword, userPasswordCheck;
     private CircleImageView photo;
     private Bitmap photoBitmap;
     private Uri photoUri;
@@ -64,6 +64,7 @@ public class JoinActivity extends AppCompatActivity {
         progressbar = (ProgressBar) findViewById(R.id.progressBar);
         photo = (CircleImageView) findViewById(R.id.photo);
         userId = (EditText) findViewById(R.id.userId);
+        nickName = (EditText) findViewById(R.id.nickName);
         userPassword = (EditText) findViewById(R.id.userPassword);
         userPasswordCheck = (EditText) findViewById(R.id.userPasswordCheck);
         memberButton = (Button) findViewById(R.id.memberButton);
@@ -73,6 +74,7 @@ public class JoinActivity extends AppCompatActivity {
                 String id = userId.getText().toString();
                 String password = userPassword.getText().toString();
                 String passwordCheck = userPasswordCheck.getText().toString();
+                String nick = nickName.getText().toString();
 
 
                 if (id.length() <= 0 || password.length() <= 0 ||  passwordCheck.length() <= 0) {
@@ -114,12 +116,13 @@ public class JoinActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             Uri profile = uri;
-                                            myRef.child(key).setValue(new UserInfo(key, id, password, profile.toString()));
+                                            myRef.child(key).setValue(new UserInfo(key, id, password, nick, profile.toString()));
                                             progressbar.setVisibility(View.GONE);
                                             Intent intent = new Intent(JoinActivity.this, MainActivity.class);
                                             intent.putExtra("key", key);
                                             intent.putExtra("id", id);
-                                            intent.putExtra("profile", profile);
+                                            intent.putExtra("nickName", nick);
+                                            intent.putExtra("profile", profile.toString());
                                             startActivity(intent);
                                             finish();
                                         }

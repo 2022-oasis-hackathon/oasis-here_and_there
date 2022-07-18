@@ -55,7 +55,7 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         View rootView;
         private ImageView photo;
-        private TextView location, name, detail, date;
+        private TextView location, name, detail, date1, date2, date3;
 
         public MyViewHolder(View v) {
             super(v);
@@ -69,7 +69,9 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
             location = (TextView) v.findViewById(R.id.location);
             name = (TextView) v.findViewById(R.id.name);
             detail = (TextView) v.findViewById(R.id.detail);
-            date = (TextView) v.findViewById(R.id.date);
+            date1 = (TextView) v.findViewById(R.id.date1);
+            date2 = (TextView) v.findViewById(R.id.date2);
+            date3 = (TextView) v.findViewById(R.id.date3);
 
         }
     }
@@ -94,7 +96,7 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
 
         holder.rootView.setTag(position);
 
-        Uri uri = Uri.parse(filteredList.get(position).getPhoto());
+        Uri uri = Uri.parse(filteredList.get(position).getFirstPhoto());
         Glide.with(holder.rootView.getContext())
                 .load(uri)
                 .into(holder.photo);
@@ -102,8 +104,9 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
         holder.location.setText(filteredList.get(position).getLocation());
         holder.name.setText(filteredList.get(position).getName());
         holder.detail.setText("세부유형: " + filteredList.get(position).getDetail());
-        holder.date.setText("입주가능일: " + filteredList.get(position).getDate());
-
+        holder.date1.setText("입주가능일: " + filteredList.get(position).getDate1());
+        holder.date2.setText("신청기간: " + filteredList.get(position).getDate2());
+        holder.date3.setText("운영기간: " + filteredList.get(position).getDate3());
 
 
     }

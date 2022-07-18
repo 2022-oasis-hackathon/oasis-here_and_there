@@ -43,7 +43,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("home");
+    DatabaseReference myRef = database.getReference("datas");
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReference();
@@ -51,6 +51,7 @@ public class HomeFragment extends Fragment {
     String myKey;
     String myId;
     String myProfile;
+    String myNickName;
 
     private EditText search;
     private TextView userId;
@@ -77,56 +78,14 @@ public class HomeFragment extends Fragment {
         myKey = MainActivity.myKey;
         myId = MainActivity.myId;
         myProfile = MainActivity.myProfile;
+        myNickName = MainActivity.myNickName;
 
 
         search = (EditText) v.findViewById(R.id.search);
         userId = (TextView) v.findViewById(R.id.userId);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
 
-        userId.setText(myId + "님을 위한 추천지");
-
-
-        /*
-        sampleDataSave
-
-        Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sample2);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] data = baos.toByteArray();
-
-        String key = myRef.push().getKey();
-        StorageReference tempStorage = storageRef.child("homes/" + key + ".jpg");
-        UploadTask uploadTask = tempStorage.putBytes(data);
-        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Uri photo = uri;
-
-                           // private String location;
-                           // private String title;
-                           // private String detail;
-                           // private String date;
-                           // private String photo;
-
-                       //HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
-                        //HomeData homeData = new HomeData(key, "전라북도 춘천시", "은행나무마을", "귀촌형(중심지거주)", "2022.04.25", photo.toString());
-                        //HomeData homeData = new HomeData(key, "전라남도 삼척시", "신리너와마을", "귀농형(일반)", "2022.03.31", photo.toString());
-
-                        HomeData homeData = new HomeData(key, "전라남도 울주군", "소호마을", "귀농형(일반)", "2022.07.15", photo.toString());
-                        myRef.child(key).setValue(homeData);
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure( Exception e) {
-            }
-        });
-*/
+        userId.setText(myNickName);
 
         search.setImeOptions(EditorInfo.IME_ACTION_DONE);
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -186,28 +145,6 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public void dataFilter(String location) {
-
-        tempHomeDataList.clear();
-        for (HomeData homeData : homeDataList) {
-            if (homeData.getLocation().contains(location)) {
-                tempHomeDataList.add(homeData);
-            }
-        }
-        homeDataList.clear();
-
-        for (HomeData homeData: tempHomeDataList) {
-            homeDataList.add(homeData);
-        }
-
-        homeAdapter.notifyDataSetChanged();
-
-       // homeDataList.clear();
-        for (HomeData homeData: temp2HomeDataList) {
-            System.out.println(homeData.getLocation());
-           // homeDataList.add(homeData);
-        }
-    }
 
 }
 

@@ -12,7 +12,6 @@
         android:id="@+id/photo"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/sample2"
         android:scaleType="fitXY"/>
 
     <LinearLayout
@@ -52,7 +51,25 @@
             android:layout_marginTop="10dp"/>
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022.07.15"
+            android:textColor="#000000"
+            android:textSize="17dp"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/date2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022.07.15"
+            android:textColor="#000000"
+            android:textSize="17dp"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/date3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2022.07.15"

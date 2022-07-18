@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public static String myId;
     public static String myKey;
     public static String myProfile;
+    public static String myNickName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         myKey = intent.getStringExtra("key");
         myId = intent.getStringExtra("id");
         myProfile = intent.getStringExtra("profile");
+        myNickName = intent.getStringExtra("nickName");
 
     /*
         myKey = "-N7EfXAxv1tz6SjOyGtc";

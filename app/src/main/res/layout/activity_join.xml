@@ -22,9 +22,28 @@
             android:layout_marginTop="25dp"
             android:visibility="visible"/>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="닉네임"
+                android:inputType="textEmailAddress"
+                android:id="@+id/nickName"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
