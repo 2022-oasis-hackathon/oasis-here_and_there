@@ -16,9 +16,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,6 +46,18 @@ public class JoinActivity extends AppCompatActivity {
 
     public static final int PICK_IMAGE = 1;
 
+    String[] dataList1 = {"전라북도 전주시", "전라북도 군산시", "전라북도 익산시", "전라북도 정읍시", "전라북도 남원시"
+            , "전라북도 김제시", "전라북도 완주군", "전라북도 진안군", "전라북도 무주군", "전라북도 장수군"
+            , "전라북도 임실군", "전라북도 순창군", "전라북도 고창군", "전라북도 부안군"
+            , "전라남도 목포시", "전라남도 여수시", "전라남도 순천시", "전라남도 나주시"
+            , "전라남도 광양시", "전라남도 담양군", "전라남도 곡성군", "전라남도 구례군"
+            , "전라남도 고흥군", "전라남도 보성군", "전라남도 화순군", "전라남도 장흥군"
+            , "전라남도 강진군", "전라남도 해남군", "전라남도 영암군", "전라남도 무안군"
+            , "전라남도 함평군", "전라남도 영광군", "전라남도 장성군", "전라남도 완도군"
+            , "전라남도 진도군", "전라남도 신안군"};
+    String[] dataList2 = {"농업", "어업", "양봉"};
+    String[] dataList3 = {"마을회관 근처"};
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
 
@@ -54,12 +71,94 @@ public class JoinActivity extends AppCompatActivity {
     private Uri photoUri;
     private ProgressBar progressbar;
 
+    private RelativeLayout one, two, three;
+    private TextView oneText, twoText, threeText;
+    int max =3;
+
+    Spinner spinner1, spinner2, spinner3;
+    String userInfo1 = "", userInfo2, userInfo3;
+
     ArrayList<UserInfo> userInfos = new ArrayList<UserInfo>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
+
+        one = (RelativeLayout) findViewById(R.id.one);
+        two = (RelativeLayout) findViewById(R.id.two);
+        three = (RelativeLayout) findViewById(R.id.three);
+        oneText = (TextView) findViewById(R.id.oneText);
+        twoText= (TextView) findViewById(R.id.twoText);
+        threeText = (TextView) findViewById(R.id.threeText);
+
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, dataList1);
+        adapter1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (max == 3) {
+                    max -=1;
+                } else if (max == 2) {
+                    max -= 1;
+                    one.setVisibility(View.VISIBLE);
+                    oneText.setText(dataList1[i]);
+                    userInfo1 += dataList1[i] + ",";
+                } else if (max == 1) {
+                    max -= 1;
+                    two.setVisibility(View.VISIBLE);
+                    twoText.setText(dataList1[i]);
+                    userInfo1 += dataList1[i] + ",";
+                } else if (max == 0) {
+                    max -= 1;
+                    three.setVisibility(View.VISIBLE);
+                    threeText.setText(dataList1[i]);
+                    userInfo1 += dataList1[i] + ",";
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, dataList2);
+        adapter2.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                userInfo2 = dataList2[i];
+                System.out.println(dataList2[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, dataList3);
+        adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner3.setAdapter(adapter3);
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                userInfo3 = dataList3[i];
+                System.out.println(dataList3[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
 
         progressbar = (ProgressBar) findViewById(R.id.progressBar);
         photo = (CircleImageView) findViewById(R.id.photo);
@@ -116,13 +215,17 @@ public class JoinActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             Uri profile = uri;
-                                            myRef.child(key).setValue(new UserInfo(key, id, password, nick, profile.toString()));
+                                            myRef.child(key).setValue(new UserInfo(key, id, password, nick, profile.toString(), userInfo1, userInfo2, userInfo3));
                                             progressbar.setVisibility(View.GONE);
                                             Intent intent = new Intent(JoinActivity.this, MainActivity.class);
                                             intent.putExtra("key", key);
                                             intent.putExtra("id", id);
                                             intent.putExtra("nickName", nick);
                                             intent.putExtra("profile", profile.toString());
+                                            intent.putExtra("userInfo1", userInfo1);
+                                            intent.putExtra("userInfo2", userInfo2);
+                                            intent.putExtra("userInfo3", userInfo3);
+
                                             startActivity(intent);
                                             finish();
                                         }

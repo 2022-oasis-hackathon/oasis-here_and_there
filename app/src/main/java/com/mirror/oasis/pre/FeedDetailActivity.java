@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -56,6 +57,7 @@ public class FeedDetailActivity extends AppCompatActivity {
     TextView userNickName, title, content;
     ProgressBar progressBar;
     EditText comment;
+    ImageButton backButton;
 
 
     private RecyclerView commentRecyclerView;
@@ -100,11 +102,7 @@ public class FeedDetailActivity extends AppCompatActivity {
         detailAdapter = new DetailAdapter(photoDataList);
         feedPhotoRecyclerView.setAdapter(detailAdapter);
 
-        /*
-            private RecyclerView commentRecyclerView;
-    private CommentAdapter commentAdapter;
-    private RecyclerView.LayoutManager commentLayoutManager;
-         */
+
         commentRecyclerView = (RecyclerView) findViewById(R.id.commentRecyclerView);
         commentRecyclerView.setHasFixedSize(true);
         commentLayoutManager = new LinearLayoutManager(this);
@@ -117,6 +115,13 @@ public class FeedDetailActivity extends AppCompatActivity {
         userNickName = (TextView) findViewById(R.id.userNickName);
         title =  (TextView) findViewById(R.id.title);
         content = (TextView) findViewById(R.id.content);
+        backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         init();
     }
 

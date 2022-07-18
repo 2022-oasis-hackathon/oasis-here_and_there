@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     public static String myKey;
     public static String myProfile;
     public static String myNickName;
+    public static String myUserInfo1;
+    public static String myUserInfo2;
+    public static String myUserInfo3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,19 @@ public class MainActivity extends AppCompatActivity {
         myId = intent.getStringExtra("id");
         myProfile = intent.getStringExtra("profile");
         myNickName = intent.getStringExtra("nickName");
+        myUserInfo1 = intent.getStringExtra("userInfo1");
+        myUserInfo2 = intent.getStringExtra("userInfo2");
+        myUserInfo3 = intent.getStringExtra("userInfo3");
+
 */
 
         myKey = "-N7GXhGksk9Y0GP_7b5i";
         myId = "test123@naver.com";
         myNickName = "귀농짱";
         myProfile = "https://firebasestorage.googleapis.com/v0/b/oasis-8f075.appspot.com/o/users%2F-N7GXhGksk9Y0GP_7b5i.jpg?alt=media&token=18394287-aef8-42f4-8785-5480b07d86ad";
-
+        myUserInfo1 = "전라북도 익산시,전라남도 여수시, 전라남도 곡성군";
+        myUserInfo2 = "농업";
+        myUserInfo3 = "마을회관,";
         Log.d(TAG, myKey + " " + myId + " " + myProfile);
 
 

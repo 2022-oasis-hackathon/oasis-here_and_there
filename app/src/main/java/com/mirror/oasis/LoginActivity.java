@@ -88,6 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("id", userInfo.getId());
                                 intent.putExtra("nickName", userInfo.getNickName());
                                 intent.putExtra("profile", userInfo.getProfileUri());
+                                intent.putExtra("userInfo1", userInfo.getUserInfo1());
+                                intent.putExtra("userInfo2", userInfo.getUserInfo2());
+                                intent.putExtra("userInfo3", userInfo.getUserInfo3());
                                 startActivity(intent);
                                 finish();
                             }
