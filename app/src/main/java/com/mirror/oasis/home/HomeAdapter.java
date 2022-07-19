@@ -17,7 +17,7 @@ import com.mirror.oasis.R;
 import java.util.ArrayList;
 import java.util.List;
 
-class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> implements Filterable {
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> implements Filterable {
     private List<HomeData> unFilteredlist;
     private List<HomeData> filteredList;
     static public View.OnClickListener onClick;

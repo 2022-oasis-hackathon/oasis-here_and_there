@@ -53,6 +53,10 @@ public class HomeFragment extends Fragment {
     String myId;
     String myProfile;
     String myNickName;
+    String myUserInfo1[];
+    String myUserInfo2;
+    String myUserInfo3;
+
 
     private EditText search;
     private TextView userId;
@@ -64,6 +68,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
 
     private ProgressBar progressBar;
+
+    private TextView textView1, textView2, textView3, textView4, textView5;
 
 
     View v;
@@ -78,14 +84,31 @@ public class HomeFragment extends Fragment {
         myId = MainActivity.myId;
         myProfile = MainActivity.myProfile;
         myNickName = MainActivity.myNickName;
+        myUserInfo1 = MainActivity.myUserInfo1.split(",");
+        myUserInfo2 = MainActivity.myUserInfo2;
+        myUserInfo3 = MainActivity.myUserInfo3;
+
+        textView1 = (TextView) v.findViewById(R.id.textView1);
+        textView2 = (TextView) v.findViewById(R.id.textView2);
+        textView3 = (TextView) v.findViewById(R.id.textView3);
+        textView4 = (TextView) v.findViewById(R.id.textView4);
+        textView5 = (TextView) v.findViewById(R.id.textView5);
+
+        textView1.setText(myUserInfo1[0]);
+        textView2.setText(myUserInfo1[1]);
+        textView3.setText(myUserInfo1[2]);
+        textView4.setText(myUserInfo2);
+        textView5.setText(myUserInfo3);
 
 
-        search = (EditText) v.findViewById(R.id.search);
+
         userId = (TextView) v.findViewById(R.id.userId);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
 
         userId.setText(myNickName);
 
+        /*
+        search = (EditText) v.findViewById(R.id.search);
         search.setImeOptions(EditorInfo.IME_ACTION_DONE);
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -97,6 +120,7 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
+         */
 
         homeRecyclerView = (RecyclerView)v.findViewById(R.id.homeRecyclerView);
         homeRecyclerView.setHasFixedSize(true);

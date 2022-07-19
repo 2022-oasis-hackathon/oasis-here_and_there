@@ -17,7 +17,7 @@ public class ForUserActivity3 extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
-    DatabaseReference foruserRef = database.getReference("foruers");
+    DatabaseReference foruserRef = database.getReference("forusers");
 
     public static String data = "";
 

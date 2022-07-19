@@ -1,13 +1,401 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MyPage"
-        android:textSize="50dp"
-        android:layout_centerInParent="true"/>
+        android:text="마이 페이지"
+        android:fontFamily="@font/scdream5"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/t"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/line"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/mypage"
+                    android:visibility="visible"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profile"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/nickName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="test"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/scdream5"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:id="@+id/userId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:text="test"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/scdream5"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:background="#F5F5F5">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        android:layout_centerInParent="true">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/mypage2"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="찜"
+                                android:layout_gravity="center"
+                                android:textSize="15dp"
+                                android:textColor="#000000"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/scdream5"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/createFarming"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        android:layout_centerInParent="true">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/mypage1"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="파밍"
+                                android:layout_gravity="center"
+                                android:textSize="15dp"
+                                android:textColor="#000000"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/scdream5"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="등록하기"
+                                android:layout_gravity="center"
+                                android:textSize="15dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/scdream5"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/mypage3"/>
+
+                <TextView
+                    android:layout_toRightOf="@id/image3"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="관심사 설정"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/scdream5"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#BCBCC0"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/fil"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="지역"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/scdream5"
+                        android:textSize="17dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <HorizontalScrollView
+                        android:layout_toLeftOf="@+id/i1"
+                        android:layout_toRightOf="@+id/t1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/textView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/layout4"
+                                android:text="전라남도 구례군"
+                                android:padding="5dp"
+                                android:fontFamily="@font/scdream5"/>
+
+                            <TextView
+                                android:gravity="center"
+                                android:id="@id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/layout4"
+                                android:text="전라남도 구례군"
+                                android:padding="5dp"
+                                android:fontFamily="@font/scdream5"
+                                android:layout_marginLeft="5dp"/>
+
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/layout4"
+                                android:text="전라남도 구례군"
+                                android:padding="5dp"
+                                android:fontFamily="@font/scdream5"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+
+                    </HorizontalScrollView>
+
+                    <ImageView
+                        android:id="@+id/i1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/filter"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D9D9D9"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="업종"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/scdream5"
+                        android:textSize="17dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_toRightOf="@+id/t2"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/layout4"
+                        android:text="전라남도 구례군"
+                        android:padding="5dp"
+                        android:fontFamily="@font/scdream5"
+                        android:layout_marginLeft="10dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/i2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/filter"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D9D9D9"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="주변\n환경"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/scdream5"
+                        android:textSize="17dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_toRightOf="@+id/t3"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/layout4"
+                        android:text="전라남도 구례군"
+                        android:padding="5dp"
+                        android:fontFamily="@font/scdream5"
+                        android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/i3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/filter"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#BCBCC0"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

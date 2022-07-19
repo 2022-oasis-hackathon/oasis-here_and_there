@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
     private List<PhotoData> photoDataList = new ArrayList<>();
 
     ImageButton backButton;
-    TextView location, name, detailLocation, info, detail, date1, date2, date3, representative;
+    TextView location, name, detailLocation, info, detail, date1, date2, date3, representative, textView;
     Button callButton;
     String phone;
     ProgressBar progressBar;
@@ -87,6 +87,8 @@ public class DetailActivity extends AppCompatActivity {
         date1 = (TextView) findViewById(R.id.date1);
         date2 = (TextView) findViewById(R.id.date2);
         date3 = (TextView) findViewById(R.id.date3);
+        textView = (TextView) findViewById(R.id.textView);
+
         representative = (TextView) findViewById(R.id.representative);
         callButton = (Button) findViewById(R.id.callButton);
         callButton.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +119,7 @@ public class DetailActivity extends AppCompatActivity {
                 date2.setText(homeData.getDate2());
                 date3.setText(homeData.getDate3());
                 representative.setText(homeData.getRepresentative());
+                textView.setText(homeData.getWriter());
                 phone = homeData.getPhone();
                 photoKeys = homeData.getPhotoKeys();
 
