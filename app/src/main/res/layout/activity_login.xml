@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="#52DB52">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,13 +14,8 @@
         android:layout_centerInParent="true"
         android:gravity="center">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logo2" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
+       <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
@@ -30,8 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="이메일"
-                android:inputType="textEmailAddress"
-                android:id="@+id/userId"
+
                 app:hintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:counterEnabled="true"
