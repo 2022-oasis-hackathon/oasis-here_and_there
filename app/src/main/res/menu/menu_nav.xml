@@ -9,12 +9,12 @@
     <item
         android:id="@+id/preExperience"
         android:title="@null"
-        android:icon="@drawable/person"/>
+        android:icon="@drawable/pre"/>
 
     <item
         android:id="@+id/community"
         android:title="@null"
-        android:icon="@drawable/camera"/>
+        android:icon="@drawable/community"/>
 
     <item
         android:id="@+id/chat"

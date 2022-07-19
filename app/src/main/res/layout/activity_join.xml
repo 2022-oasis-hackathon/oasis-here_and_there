@@ -6,267 +6,115 @@
     android:layout_height="match_parent"
     tools:context=".JoinActivity">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+
+
     <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:gravity="center">
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_below="@+id/logo"
             android:id="@+id/photo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/mypage"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
             android:visibility="visible"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="10dp"
+        <EditText
+            android:id="@+id/nickName"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:errorEnabled="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="text"
+            android:hint="닉네임"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="20dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="닉네임"
-                android:inputType="textEmailAddress"
-                android:id="@+id/nickName"
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/userId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp">
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="textEmailAddress"
+            android:hint="이메일"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/location_layout2"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="관심 지역"
-                    android:textColor="#47DA3C"/>
-                <Spinner
-                    android:id="@+id/spinner1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:visibility="gone"
-                        android:id="@+id/one"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/location_layout"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:paddingLeft="7dp"
-                        android:paddingRight="7dp">
-
-                        <TextView
-                            android:id="@+id/oneText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:text="전라북도 익산시"
-                            android:layout_centerInParent="true"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:visibility="gone"
-                        android:id="@+id/two"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/location_layout"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:paddingLeft="7dp"
-                        android:paddingRight="7dp">
-
-                        <TextView
-                            android:id="@+id/twoText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:visibility="gone"
-                        android:id="@+id/three"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/location_layout"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:paddingLeft="7dp"
-                        android:paddingRight="7dp">
-
-                        <TextView
-                            android:id="@+id/threeText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/location_layout2"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="관심 업종"
-                    android:textColor="#47DA3C"
-                    android:layout_marginTop="10dp"/>
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/location_layout2"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="이런 환경이면 좋겠어요"
-                    android:textColor="#47DA3C"
-                    android:layout_marginTop="10dp"/>
-                <Spinner
-                    android:id="@+id/spinner3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/userPassword"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:errorEnabled="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="textPassword"
+            android:hint="비밀번호"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="이메일"
-                android:inputType="textEmailAddress"
-                android:id="@+id/userId"
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/userPasswordCheck"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:errorEnabled="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="textPassword"
+            android:hint="비밀번호 재확인"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="비밀번호"
-                android:inputType="textPassword"
-                android:id="@+id/userPassword"
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <Button
+            android:id="@+id/memberButton"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:errorEnabled="true"
+            android:layout_height="50dp"
+            android:background="@drawable/layout2"
+            android:fontFamily="@font/scdream5"
+            android:textColor="#ffffff"
+            android:text="회원가입"
+            android:textSize="15dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="비밀번호 재확인"
-                android:inputType="textPassword"
-                android:id="@+id/userPasswordCheck"
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
+            android:layout_marginRight="30dp" />
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/loginbutton"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:textColor="#ffffff"
-        android:text="회원가입"
-        android:layout_marginTop="10dp"
-        android:textSize="15dp"
-        android:id="@+id/memberButton"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"

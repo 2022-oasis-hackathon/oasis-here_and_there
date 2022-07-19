@@ -86,7 +86,7 @@ public class FeedDetailActivity extends AppCompatActivity {
                     SimpleDateFormat format1 = new SimpleDateFormat ( "HH:mm");
                     Calendar time = Calendar.getInstance();
                     String format_time1 = format1.format(time.getTime());
-                    commentRef.child(key).push().setValue(new CommentData(MainActivity.myNickName, commentData, format_time1));
+                    commentRef.child(key).push().setValue(new CommentData(MainActivity.myNickName, commentData, format_time1, MainActivity.myProfile));
                     comment.setText("");
                     return true;
                 }

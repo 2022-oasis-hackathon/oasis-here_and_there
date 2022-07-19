@@ -63,9 +63,9 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
             photo = (ImageView) v.findViewById(R.id.photo);
             location = (TextView) v.findViewById(R.id.location);
             name = (TextView) v.findViewById(R.id.name);
-            detail = (TextView) v.findViewById(R.id.detail);
-            date1 = (TextView) v.findViewById(R.id.date1);
-            date2 = (TextView) v.findViewById(R.id.date2);
+            //detail = (TextView) v.findViewById(R.id.detail);
+            //date1 = (TextView) v.findViewById(R.id.date1);
+            //date2 = (TextView) v.findViewById(R.id.date2);
             date3 = (TextView) v.findViewById(R.id.date3);
 
             rootView = v;
@@ -102,10 +102,10 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> impleme
 
         holder.location.setText(filteredList.get(position).getLocation());
         holder.name.setText(filteredList.get(position).getName());
-        holder.detail.setText("세부유형:  " + filteredList.get(position).getDetail());
-        holder.date1.setText("입주가능일: " + filteredList.get(position).getDate1());
-        holder.date2.setText("신청기간:  " + filteredList.get(position).getDate2());
-        holder.date3.setText("운영기간:  " + filteredList.get(position).getDate3());
+        //holder.detail.setText("세부유형:  " + filteredList.get(position).getDetail());
+        //holder.date1.setText("입주가능일: " + filteredList.get(position).getDate1());
+       // holder.date2.setText("신청기간:  " + filteredList.get(position).getDate2());
+        holder.date3.setText(filteredList.get(position).getDate3());
 
 
     }

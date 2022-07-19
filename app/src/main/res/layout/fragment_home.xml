@@ -26,18 +26,26 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/a"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/image1"/>
+
         <TextView
             android:id="@+id/userId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/gmb"
+            android:fontFamily="@font/scdream5"
             android:textSize="18dp"
+            android:layout_marginLeft="8dp"
             android:textColor="#000000" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/gmb"
+            android:fontFamily="@font/scdream5"
             android:text="님을 위한 추천지"
             android:textSize="13dp" />
 

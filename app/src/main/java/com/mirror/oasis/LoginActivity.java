@@ -3,11 +3,13 @@ package com.mirror.oasis;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -33,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private EditText userId, userPassword;
-    private Button loginButton, memberButton;
+    private Button loginButton;
+    private ImageButton backButton;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
@@ -49,12 +52,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         userId = (EditText) findViewById(R.id.userId);
         userPassword = (EditText) findViewById(R.id.userPassword);
         loginButton = (Button) findViewById(R.id.loginButton);
-        memberButton = (Button) findViewById(R.id.memberButton);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -88,9 +96,6 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("id", userInfo.getId());
                                 intent.putExtra("nickName", userInfo.getNickName());
                                 intent.putExtra("profile", userInfo.getProfileUri());
-                                intent.putExtra("userInfo1", userInfo.getUserInfo1());
-                                intent.putExtra("userInfo2", userInfo.getUserInfo2());
-                                intent.putExtra("userInfo3", userInfo.getUserInfo3());
                                 startActivity(intent);
                                 finish();
                             }
@@ -106,57 +111,6 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
 
-            }
-        });
-
-        memberButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
-                startActivity(intent);
-                finish();
-                /*
-                String id = userId.getText().toString();
-                String password = userPassword.getText().toString();
-
-                if (id.length() <= 0 || password.length() <= 0) {
-                    Toast.makeText(LoginActivity.this, "입력사항을 확인해 주세요.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                userInfos.clear();
-
-                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        for(DataSnapshot snapshot1: snapshot.getChildren()) {
-                            UserInfo value = snapshot1.getValue(UserInfo.class);
-                            userInfos.add(value);
-
-                        }
-
-                        boolean check = false;
-                        for (UserInfo userInfo : userInfos) {
-                            if (userInfo.getId().equals(id)) {
-                                check = true;
-                            }
-                        }
-
-                        if (check) {
-                            Toast.makeText(LoginActivity.this, "이미 가입된 아이디입니다.", Toast.LENGTH_SHORT).show();
-                        } else {
-                            myRef.push().setValue(new UserInfo(id, password));
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-
-                    }
-                });
-
-                 */
             }
         });
     }

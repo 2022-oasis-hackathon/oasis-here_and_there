@@ -4,12 +4,15 @@ class CommentData {
     private String nickName;
     private String comment;
     private String time;
+    private String profile;
 
     public CommentData() {}
-    public CommentData(String nickName, String comment, String time) {
+
+    public CommentData(String nickName, String comment, String time, String profile) {
         this.nickName = nickName;
         this.comment = comment;
         this.time = time;
+        this.profile = profile;
     }
 
     public String getNickName() {
@@ -34,5 +37,13 @@ class CommentData {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 }

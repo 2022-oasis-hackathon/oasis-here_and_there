@@ -7,10 +7,110 @@
     tools:context=".pre.FeedDetailActivity">
 
 
+
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/back"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:fontFamily="@font/scdream5"
+            android:layout_centerInParent="true"
+            android:text="제목"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#000000"/>
+
+    <LinearLayout
+        android:id="@+id/th"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mypage"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/userNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+            android:layout_toRightOf="@+id/profile"
+            android:fontFamily="@font/scdream5"
+            android:text="test"
+            android:textColor="#000000" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CFCECE"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:fontFamily="@font/scdream5"
+        android:text="상세내용"
+        android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/top"
+        android:layout_below="@+id/th"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/feedPhotoRecyclerView"
@@ -25,108 +125,17 @@
             android:visibility="gone"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/topLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
-
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@drawable/back"
-                android:layout_centerVertical="true"/>
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/top"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="80dp">
 
         <LinearLayout
+            android:layout_below="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/mypage"
-                    android:layout_gravity="center"
-                    android:visibility="visible"/>
-
-                <TextView
-                    android:id="@+id/userNickName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/profile"
-                    android:fontFamily="@font/gmm"
-                    android:text="test"
-                    android:textColor="#000000" />
-
-            </RelativeLayout>
+            android:orientation="vertical"
+            android:layout_marginBottom="80dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CFCECE"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:textSize="18dp"
-                android:fontFamily="@font/gmm"
-                android:text="제목"/>
-
-
-            <TextView
-                android:id="@+id/content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:fontFamily="@font/gmm"
-                android:text="상세내용"
-                android:layout_marginTop="5dp"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:fontFamily="@font/gmm"
-                android:text="댓글"
-                android:textColor="#47DA3C"
-                android:layout_marginTop="10dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="5dp"
                 android:background="#E3E3E3"
                 android:layout_below="@id/comment"
                 android:layout_marginTop="5dp"/>
@@ -136,7 +145,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         android:layout_alignParentBottom="true"
@@ -150,11 +158,10 @@
             android:id="@+id/comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/message_layout"
+            android:background="@drawable/layout3"
             android:padding="10dp"
-            android:hint="댓글입력..."
-            android:textColor="#ffffff"
-            android:textColorHint="#ffffff"
+            android:hint="댓글 남기기"
+            android:textColor="#000000"
             android:inputType="textPersonName"/>
 
     </RelativeLayout>

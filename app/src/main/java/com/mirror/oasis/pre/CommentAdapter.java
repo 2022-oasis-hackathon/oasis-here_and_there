@@ -14,6 +14,8 @@ import com.mirror.oasis.R;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHolder> {
 
     private List<CommentData> dataList;
@@ -21,6 +23,7 @@ class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         View rootView;
+        private CircleImageView profile;
         private TextView nickName, comment, time;
 
         public MyViewHolder(View v) {
@@ -29,6 +32,7 @@ class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHolder> {
             rootView = v;
 
 
+            profile = (CircleImageView) v.findViewById(R.id.profile);
             nickName = (TextView) v.findViewById(R.id.nickName);
             comment = (TextView) v.findViewById(R.id.comment);
             time = (TextView) v.findViewById(R.id.time);
@@ -57,6 +61,10 @@ class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHolder> {
         // click 이벤트 동작할 위젯에 setTag걸기
         holder.rootView.setTag(position);
         holder.nickName.setText(dataList.get(position).getNickName());
+        Uri uri = Uri.parse(dataList.get(position).getProfile());
+        Glide.with(holder.rootView.getContext())
+                .load(uri)
+                .into(holder.profile);
 
         holder.comment.setText(dataList.get(position).getComment());
         holder.time.setText(dataList.get(position).getTime());

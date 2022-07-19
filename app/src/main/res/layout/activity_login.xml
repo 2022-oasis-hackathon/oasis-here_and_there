@@ -4,81 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="#52DB52">
+    tools:context=".LoginActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 
     <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:gravity="center">
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
-
-       <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/userId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="textEmailAddress"
+            android:hint="이메일"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="이메일"
-
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/userPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="비밀번호"
-                android:inputType="textPassword"
-                android:id="@+id/userPassword"
-                app:hintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:counterEnabled="true"
-                app:counterMaxLength="3" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:background="@drawable/location_layout"
+            android:inputType="textPassword"
+            android:hint="비밀번호"
+            android:textColor="#000000"
+            android:fontFamily="@font/scdream5"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/loginbutton"
+            android:layout_height="50dp"
+            android:background="@drawable/layout2"
+            android:fontFamily="@font/scdream5"
             android:textColor="#ffffff"
             android:text="로그인"
             android:textSize="15dp"
             android:id="@+id/loginButton"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/loginbutton"
-            android:textColor="#ffffff"
-            android:text="회원가입"
-            android:layout_marginTop="10dp"
-            android:textSize="15dp"
-            android:id="@+id/memberButton"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp" />
-
-
 
     </LinearLayout>
 

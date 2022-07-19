@@ -97,8 +97,8 @@
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/writing"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/writing"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
