@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chat.ChatActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닉네임"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/scdream5"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/nickName"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"/>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/line"
+        android:id="@+id/chatActivityRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/layout3"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/message"
+                android:layout_weight="1"
+                android:background="@null"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"/>
+
+            <RelativeLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/degisn7"
+                android:layout_marginRight="10dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_centerInParent="true"
+                    android:id="@+id/send"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="send"
+                    android:background="@drawable/send"
+                    android:textColor="#2743F6"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:padding="10dp"/>
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

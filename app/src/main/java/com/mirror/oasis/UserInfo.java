@@ -1,6 +1,6 @@
 package com.mirror.oasis;
 
-class UserInfo {
+public class UserInfo {
     private String key;
     private String id;
     private String password;

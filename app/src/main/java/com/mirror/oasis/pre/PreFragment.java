@@ -86,7 +86,6 @@ public class PreFragment extends Fragment {
         bannerList.add(BitmapToString(BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.banner1)));
         bannerList.add(BitmapToString(BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.banner2)));
         bannerList.add(BitmapToString(BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.banner3)));
-        bannerList.add(BitmapToString(BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.banner4)));
 
         bannerRecyclerView = (RecyclerView) v.findViewById(R.id.bannerRecyclerView);
         bannerRecyclerView.setHasFixedSize(true);

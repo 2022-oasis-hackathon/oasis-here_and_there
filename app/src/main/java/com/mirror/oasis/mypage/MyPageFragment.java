@@ -1,5 +1,6 @@
 package com.mirror.oasis.mypage;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -57,6 +58,8 @@ public class MyPageFragment extends Fragment {
         createFarming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CreateFarmingActivity.class);
+                startActivity(intent);
                 Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
             }
         });

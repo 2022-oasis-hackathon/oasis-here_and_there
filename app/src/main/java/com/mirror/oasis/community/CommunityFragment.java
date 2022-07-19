@@ -33,8 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommunityFragment extends Fragment {
-    View v;
 
+    View v;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("datas");

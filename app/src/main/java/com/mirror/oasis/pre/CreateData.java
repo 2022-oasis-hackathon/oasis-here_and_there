@@ -2,7 +2,7 @@ package com.mirror.oasis.pre;
 
 import java.util.ArrayList;
 
-class CreateData {
+public class CreateData {
     private String id;
     private String nickName;
     private String title;

@@ -26,6 +26,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.mirror.oasis.home.HomeData;
+import com.mirror.oasis.pre.CreateData;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
-    DatabaseReference homeRef = database.getReference("datas");
+    DatabaseReference homeRef = database.getReference("feed");
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReference();
 
@@ -113,6 +114,58 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        /*
+        byte[] data1 = getData(R.drawable.data1);
+        byte[] data2 = getData(R.drawable.data2);
+        byte[] data3 = getData(R.drawable.data3);
+        byte[] data4 = getData(R.drawable.data4);
+        ArrayList<byte[]> dataList = new ArrayList<>();
+        dataList.add(data1);
+        dataList.add(data2);
+        dataList.add(data3);
+        dataList.add(data4);
+
+        String realKey = homeRef.push().getKey();
+        ArrayList<String> photoKeys = new ArrayList<>();
+        ArrayList<Uri> photoUri = new ArrayList<>();
+        for (int i = 0; i < dataList.size(); i++) {
+            byte[] data = dataList.get(i);
+            String key = homeRef.push().getKey();
+            photoKeys.add(key);
+            StorageReference tempStorage = storageRef.child("feeds/" + key + ".jpg");
+            UploadTask uploadTask = tempStorage.putBytes(data);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    if (firstCheck) {
+                        tempStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                photoUri.add(uri);
+                                Uri photo = uri;
+
+                                CreateData createData = new CreateData("test123@naver.com", "귀농짱", "알로에 농장 후기", "오늘은 정읍에 있는 알로에사랑에 가서 알로에체험 프로그램에 참여해봤어요\n" +
+                                        "여기는 6차 산업 인증을 받은 농장으로  건강한 땅에서 재배한 알로에 품질 좋은 먹거리를 제조, 판매하고 있는 농장이라네요\n" +
+                                        "알로에키트를 받아서 알로에청도 한번 만들어봤어요 잘만들었나요? ㅎㅎ",
+                                        photoKeys, realKey, photo.toString(), "");
+
+                                homeRef.child(realKey).setValue(createData);
+                                System.out.println("데이터: " + photo);
+                            }
+                        });
+                        firstCheck =  false;
+                    }
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure( Exception e) {
+                }
+            });
+     }
+         */
+
     }
 
     public byte[] getData(int i) {

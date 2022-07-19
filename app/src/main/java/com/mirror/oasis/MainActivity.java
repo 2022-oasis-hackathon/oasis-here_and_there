@@ -51,7 +51,17 @@ public class MainActivity extends AppCompatActivity {
         //myUserInfo3 = intent.getStringExtra("userInfo3");
 
 
-        myKey = "-N7GXhGksk9Y0GP_7b5i";
+
+
+                myId = ForUserActivity1.myId;
+        myKey = ForUserActivity1.myKey;
+        myProfile = ForUserActivity1.myProfile;
+        myNickName = ForUserActivity1.myNickName;
+        myUserInfo1 = ForUserActivity1.data;
+        myUserInfo2 = ForUserActivity2.data;
+        myUserInfo3 = ForUserActivity3.data;
+
+                myKey = "-N7GXhGksk9Y0GP_7b5i";
         myId = "test123@naver.com";
         myNickName = "귀농짱";
         myProfile = "https://firebasestorage.googleapis.com/v0/b/oasis-8f075.appspot.com/o/users%2F-N7GXhGksk9Y0GP_7b5i.jpg?alt=media&token=18394287-aef8-42f4-8785-5480b07d86ad";
@@ -59,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         myUserInfo2 = "농업";
         myUserInfo3 = "마을회관,";
  */
+
         myId = ForUserActivity1.myId;
         myKey = ForUserActivity1.myKey;
         myProfile = ForUserActivity1.myProfile;

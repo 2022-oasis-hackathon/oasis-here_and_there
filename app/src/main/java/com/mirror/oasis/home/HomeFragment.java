@@ -33,6 +33,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.mirror.oasis.DetailActivity;
+import com.mirror.oasis.ForUserActivity1;
 import com.mirror.oasis.JoinActivity;
 import com.mirror.oasis.MainActivity;
 import com.mirror.oasis.R;
@@ -84,7 +85,7 @@ public class HomeFragment extends Fragment {
         myId = MainActivity.myId;
         myProfile = MainActivity.myProfile;
         myNickName = MainActivity.myNickName;
-        myUserInfo1 = MainActivity.myUserInfo1.split(",");
+        myUserInfo1 = ForUserActivity1.data.split(",");
         myUserInfo2 = MainActivity.myUserInfo2;
         myUserInfo3 = MainActivity.myUserInfo3;
 
