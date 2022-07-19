@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                 check = false;
 
                                 progressBar.setVisibility(View.GONE);
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, ForUserActivity1.class);
                                 intent.putExtra("key", userInfo.getKey());
                                 intent.putExtra("id", userInfo.getId());
                                 intent.putExtra("nickName", userInfo.getNickName());

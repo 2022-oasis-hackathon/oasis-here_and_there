@@ -133,7 +133,7 @@ public class JoinActivity extends AppCompatActivity {
                                             Uri profile = uri;
                                             myRef.child(key).setValue(new UserInfo(key, id, password, nick, profile.toString()));
                                             progressbar.setVisibility(View.GONE);
-                                            Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+                                            Intent intent = new Intent(JoinActivity.this, ForUserActivity1.class);
                                             intent.putExtra("key", key);
                                             intent.putExtra("id", id);
                                             intent.putExtra("nickName", nick);

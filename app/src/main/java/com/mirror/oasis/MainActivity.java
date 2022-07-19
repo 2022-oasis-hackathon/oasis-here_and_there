@@ -40,17 +40,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        /*
+    /*
         Intent intent = getIntent();
         myKey = intent.getStringExtra("key");
         myId = intent.getStringExtra("id");
         myProfile = intent.getStringExtra("profile");
         myNickName = intent.getStringExtra("nickName");
-        myUserInfo1 = intent.getStringExtra("userInfo1");
-        myUserInfo2 = intent.getStringExtra("userInfo2");
-        myUserInfo3 = intent.getStringExtra("userInfo3");
+        //myUserInfo1 = intent.getStringExtra("userInfo1");
+        //myUserInfo2 = intent.getStringExtra("userInfo2");
+        //myUserInfo3 = intent.getStringExtra("userInfo3");
 
-*/
 
         myKey = "-N7GXhGksk9Y0GP_7b5i";
         myId = "test123@naver.com";
@@ -59,7 +58,18 @@ public class MainActivity extends AppCompatActivity {
         myUserInfo1 = "전라북도 익산시,전라남도 여수시, 전라남도 곡성군";
         myUserInfo2 = "농업";
         myUserInfo3 = "마을회관,";
-        Log.d(TAG, myKey + " " + myId + " " + myProfile);
+ */
+        myId = ForUserActivity1.myId;
+        myKey = ForUserActivity1.myKey;
+        myProfile = ForUserActivity1.myProfile;
+        myNickName = ForUserActivity1.myNickName;
+        myUserInfo1 = ForUserActivity1.data;
+        myUserInfo2 = ForUserActivity2.data;
+        myUserInfo3 = ForUserActivity3.data;
+
+
+        Log.d(TAG, myKey + " " + myId + " " + myNickName + " " + myProfile);
+        System.out.println(myUserInfo1 + " " + myUserInfo2 + " " + myUserInfo3);
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
