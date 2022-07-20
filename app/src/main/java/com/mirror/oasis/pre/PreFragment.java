@@ -161,8 +161,8 @@ public class PreFragment extends Fragment {
                 boardRecyclerView.setVisibility(View.GONE);
                 feedRecyclerView.setVisibility(View.VISIBLE);
 
-                feedLayout.setBackgroundColor(Color.parseColor("#000000"));
-                feedText.setTextColor(Color.parseColor("#000000"));
+                feedLayout.setBackgroundColor(Color.parseColor("#3D7244"));
+                feedText.setTextColor(Color.parseColor("#3D7244"));
 
                 boardLayout.setBackgroundColor(Color.parseColor("#CAC9C9"));
                 boardText.setTextColor(Color.parseColor("#CAC9C9"));
@@ -176,8 +176,8 @@ public class PreFragment extends Fragment {
                 boardRecyclerView.setVisibility(View.VISIBLE);
                 feedRecyclerView.setVisibility(View.GONE);
 
-                boardLayout.setBackgroundColor(Color.parseColor("#000000"));
-                boardText.setTextColor(Color.parseColor("#000000"));
+                boardLayout.setBackgroundColor(Color.parseColor("#3D7244"));
+                boardText.setTextColor(Color.parseColor("#3D7244"));
 
                 feedLayout.setBackgroundColor(Color.parseColor("#CAC9C9"));
                 feedText.setTextColor(Color.parseColor("#CAC9C9"));

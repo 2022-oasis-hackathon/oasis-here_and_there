@@ -27,6 +27,9 @@ public class ForUserActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_user3);
+
+        data = "";
+
         one = (RelativeLayout) findViewById(R.id.one);
         two = (RelativeLayout) findViewById(R.id.two);
         three = (RelativeLayout) findViewById(R.id.three);

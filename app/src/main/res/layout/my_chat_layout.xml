@@ -28,7 +28,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ㅎㅇ"
+                android:text="ㅎㅇasdasd
+asdasdasdasdasdadasd
+asdasdasda
+asdasd"
                 android:textColor="#ffffff"
                 android:fontFamily="@font/gmm"
                 android:padding="5dp"

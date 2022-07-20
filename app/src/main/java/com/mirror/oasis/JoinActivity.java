@@ -61,6 +61,10 @@ public class JoinActivity extends AppCompatActivity {
     private Uri photoUri;
     private ProgressBar progressbar;
 
+    public static String myId;
+    public static String myKey;
+    public static String myNickName;
+    public static String myProfile;
 
     ArrayList<UserInfo> userInfos = new ArrayList<UserInfo>();
 
@@ -134,6 +138,10 @@ public class JoinActivity extends AppCompatActivity {
                                             myRef.child(key).setValue(new UserInfo(key, id, password, nick, profile.toString()));
                                             progressbar.setVisibility(View.GONE);
                                             Intent intent = new Intent(JoinActivity.this, ForUserActivity1.class);
+                                            myKey = key;
+                                            myId = id;
+                                            myNickName = nick;
+                                            myProfile = profile.toString();
                                             intent.putExtra("key", key);
                                             intent.putExtra("id", id);
                                             intent.putExtra("nickName", nick);

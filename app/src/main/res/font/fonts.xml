@@ -23,5 +23,40 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="900"
+        android:font="@font/scd1"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
         android:font="@font/scd2"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd3"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd4"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd5"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd6"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd7"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd8"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/scd9"/>
+
 </font-family>

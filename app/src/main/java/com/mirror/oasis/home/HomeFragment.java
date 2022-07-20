@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -72,6 +73,8 @@ public class HomeFragment extends Fragment {
 
     private TextView textView1, textView2, textView3, textView4, textView5;
 
+    ImageButton i1;
+
 
     View v;
 
@@ -102,6 +105,14 @@ public class HomeFragment extends Fragment {
         textView5.setText(myUserInfo3);
 
 
+        i1 = (ImageButton) v.findViewById(R.id.i1);
+        i1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ForUserActivity1.class);
+                startActivity(intent);
+            }
+        });
 
         userId = (TextView) v.findViewById(R.id.userId);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
@@ -155,7 +166,11 @@ public class HomeFragment extends Fragment {
                 homeDataList.clear();
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                     HomeData homeData = snapshot1.getValue(HomeData.class);
-                    homeDataList.add(homeData);
+
+
+                    if (homeData.getLocation().equals(myUserInfo1[0]) || homeData.getLocation().equals(myUserInfo1[1]) || homeData.getLocation().equals(myUserInfo1[2])) {
+                        homeDataList.add(homeData);
+                    };
                 }
                 homeAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);

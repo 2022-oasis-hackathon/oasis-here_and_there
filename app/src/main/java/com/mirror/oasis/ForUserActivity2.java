@@ -19,6 +19,7 @@ public class ForUserActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_user2);
 
+        data = "";
         one = (RelativeLayout) findViewById(R.id.one);
         two = (RelativeLayout) findViewById(R.id.two);
         three = (RelativeLayout) findViewById(R.id.three);

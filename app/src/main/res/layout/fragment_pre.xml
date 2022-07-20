@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="피드"
-                android:textColor="#000000"
+                android:textColor="#3D7244"
                 android:textSize="16dp"
                 android:fontFamily="@font/gmm"
                 android:layout_centerInParent="true"/>
@@ -36,7 +36,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:id="@+id/feedLayout"
-                android:background="#000000"
+                android:background="#3D7244"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_alignParentBottom="true"/>

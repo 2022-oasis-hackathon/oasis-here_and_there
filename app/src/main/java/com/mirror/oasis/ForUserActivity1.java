@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +42,27 @@ public class ForUserActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_user1);
 
+        data = "";
         Intent intent = getIntent();
         myKey = intent.getStringExtra("key");
         myId = intent.getStringExtra("id");
         myProfile = intent.getStringExtra("profile");
         myNickName = intent.getStringExtra("nickName");
+
+        System.out.println("Login: " + LoginActivity.myKey);
+        System.out.println("Join: " + JoinActivity.myKey);
+        
+        if (LoginActivity.myKey == null) {
+            myKey = JoinActivity.myKey;
+            myId = JoinActivity.myId;
+            myProfile = JoinActivity.myProfile;
+            myNickName = JoinActivity.myNickName;
+        } else {
+            myKey = LoginActivity.myKey;
+            myId = LoginActivity.myId;
+            myProfile = LoginActivity.myProfile;
+            myNickName = LoginActivity.myNickName;
+        }
 
         nextButton = (RelativeLayout) findViewById(R.id.nextButton);
         nextButton.setEnabled(true);

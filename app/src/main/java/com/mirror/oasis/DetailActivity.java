@@ -121,16 +121,10 @@ public class DetailActivity extends AppCompatActivity {
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Toast.makeText(DetailActivity.this, "야야", Toast.LENGTH_SHORT).show();
                 if (userKey.equals("지자체")) {
                     Toast.makeText(DetailActivity.this, "해당 상대와는 채팅을 할 수 없습니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                System.out.println("Gdgd");
-
-
                 if (already) {
                     Intent intent = new Intent(DetailActivity.this, ChatActivity.class);
                     intent.putExtra("key", alreadykey);

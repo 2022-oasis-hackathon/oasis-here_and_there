@@ -65,6 +65,8 @@ public class FeedDetailActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager commentLayoutManager;
     private List<CommentData> commentDataList = new ArrayList<>();
 
+    ImageButton send;
+
     String key;
 
 
@@ -82,12 +84,14 @@ public class FeedDetailActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == EditorInfo.IME_ACTION_DONE) {
+                    /*
                     String commentData = textView.getText().toString();
                     SimpleDateFormat format1 = new SimpleDateFormat ( "HH:mm");
                     Calendar time = Calendar.getInstance();
                     String format_time1 = format1.format(time.getTime());
                     commentRef.child(key).push().setValue(new CommentData(MainActivity.myNickName, commentData, format_time1, MainActivity.myProfile));
                     comment.setText("");
+                     */
                     return true;
                 }
                 return false;
@@ -101,6 +105,19 @@ public class FeedDetailActivity extends AppCompatActivity {
         feedPhotoRecyclerView.setLayoutManager(feedDetailLayoutManager);
         detailAdapter = new DetailAdapter(photoDataList);
         feedPhotoRecyclerView.setAdapter(detailAdapter);
+
+        send = (ImageButton) findViewById(R.id.send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String commentData = comment.getText().toString();
+                SimpleDateFormat format1 = new SimpleDateFormat ( "HH:mm");
+                Calendar time = Calendar.getInstance();
+                String format_time1 = format1.format(time.getTime());
+                commentRef.child(key).push().setValue(new CommentData(MainActivity.myNickName, commentData, format_time1, MainActivity.myProfile));
+                comment.setText("");
+            }
+        });
 
 
         commentRecyclerView = (RecyclerView) findViewById(R.id.commentRecyclerView);

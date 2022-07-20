@@ -48,6 +48,11 @@ public class LoginActivity extends AppCompatActivity {
     ArrayList<UserInfo> userInfos = new ArrayList<UserInfo>();
     boolean firstCheck = true;
 
+    public static String myId;
+    public static String myKey;
+    public static String myNickName;
+    public static String myProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +98,10 @@ public class LoginActivity extends AppCompatActivity {
 
                                 progressBar.setVisibility(View.GONE);
                                 Intent intent = new Intent(LoginActivity.this, ForUserActivity1.class);
+                                myKey = userInfo.getKey();
+                                myId = userInfo.getId();
+                                myNickName = userInfo.getNickName();
+                                myProfile = userInfo.getProfileUri();
                                 intent.putExtra("key", userInfo.getKey());
                                 intent.putExtra("id", userInfo.getId());
                                 intent.putExtra("nickName", userInfo.getNickName());
