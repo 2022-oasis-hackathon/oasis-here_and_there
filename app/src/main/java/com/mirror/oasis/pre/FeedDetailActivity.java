@@ -98,6 +98,8 @@ public class FeedDetailActivity extends AppCompatActivity {
             }
         });
 
+        comment.setText("반가워요!!");
+
         feedPhotoRecyclerView = (RecyclerView) findViewById(R.id.feedPhotoRecyclerView);
         feedPhotoRecyclerView.setHasFixedSize(true);
         feedDetailLayoutManager = new LinearLayoutManager(this);

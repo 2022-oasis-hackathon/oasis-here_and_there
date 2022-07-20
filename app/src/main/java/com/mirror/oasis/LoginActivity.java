@@ -70,8 +70,8 @@ public class LoginActivity extends AppCompatActivity {
         userPassword = (EditText) findViewById(R.id.userPassword);
         loginButton = (Button) findViewById(R.id.loginButton);
 
-//        userId.setText("test123@naver.com");
-//        userPassword.setText("test123");
+        userId.setText("test123@naver.com");
+        userPassword.setText("zxc123");
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
