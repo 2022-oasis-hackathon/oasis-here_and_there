@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,4 +9,22 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"/>
 
-</RadioGroup>
+    <TextView
+        android:id="@+id/photoNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout2"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="1/1"
+        android:gravity="center"
+        android:fontFamily="@font/scd4"
+        android:textColor="#ffffff"
+        android:textSize="15dp"/>
+
+</RelativeLayout>

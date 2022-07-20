@@ -103,8 +103,8 @@ public class FeedDetailActivity extends AppCompatActivity {
         feedDetailLayoutManager = new LinearLayoutManager(this);
         feedDetailLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         feedPhotoRecyclerView.setLayoutManager(feedDetailLayoutManager);
-        detailAdapter = new DetailAdapter(photoDataList);
-        feedPhotoRecyclerView.setAdapter(detailAdapter);
+//        detailAdapter = new DetailAdapter(photoDataList, photoDataList.size());
+//        feedPhotoRecyclerView.setAdapter(detailAdapter);
 
         send = (ImageButton) findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
@@ -170,6 +170,8 @@ public class FeedDetailActivity extends AppCompatActivity {
                     });
 
                 }
+                detailAdapter = new DetailAdapter(photoDataList, photoKeys.size());
+                feedPhotoRecyclerView.setAdapter(detailAdapter);
             }
 
             @Override

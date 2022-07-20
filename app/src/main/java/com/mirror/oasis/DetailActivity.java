@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ import com.mirror.oasis.chat.Users;
 import com.mirror.oasis.home.HomeData;
 import com.mirror.oasis.pre.PhotoData;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +53,8 @@ public class DetailActivity extends AppCompatActivity {
     private List<PhotoData> photoDataList = new ArrayList<>();
 
     ImageButton backButton;
-    TextView location, name, detailLocation, info, detail, date1, date2, date3, representative, textView;
-    Button callButton, chatButton;
+    public TextView location, name, detailLocation, info, detail, date1, date2, date3, representative, textView;
+    RelativeLayout callButton, chatButton;
     String phone;
     ProgressBar progressBar;
 
@@ -83,9 +85,8 @@ public class DetailActivity extends AppCompatActivity {
         detailLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         detailRecyclerView.setLayoutManager(detailLayoutManager);
 
-        detailAdapter = new DetailAdapter(photoDataList);
-
-        detailRecyclerView.setAdapter(detailAdapter);
+//        detailAdapter = new DetailAdapter(photoDataList, photoDataList.size());
+//        detailRecyclerView.setAdapter(detailAdapter);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         backButton = (ImageButton) findViewById(R.id.backButton);
@@ -107,7 +108,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         representative = (TextView) findViewById(R.id.representative);
-        callButton = (Button) findViewById(R.id.callButton);
+        callButton = (RelativeLayout) findViewById(R.id.callButton);
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,7 +118,7 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        chatButton = (Button) findViewById(R.id.chatButton);
+        chatButton = (RelativeLayout) findViewById(R.id.chatButton);
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -213,7 +214,11 @@ public class DetailActivity extends AppCompatActivity {
                         }
                     });
 
+
                 }
+
+                detailAdapter = new DetailAdapter(photoDataList, photoKeys.size());
+                detailRecyclerView.setAdapter(detailAdapter);
             }
 
             @Override
@@ -221,7 +226,6 @@ public class DetailActivity extends AppCompatActivity {
 
             }
         });
-
 
         chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

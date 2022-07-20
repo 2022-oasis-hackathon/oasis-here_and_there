@@ -100,6 +100,25 @@ public class CreateFarmingActivity extends AppCompatActivity {
             }
         });
 
+        location.setText("전라남도 순천시");
+        detailLocation.setText("전라남도 순천시 별량면 흑가길 6");
+        detail.setText("귀농형(일반)");
+        title.setText("개랭이고들빼기마을");
+        date1.setText("2022.07.31");
+        date21.setText("2022.07.20");
+        date22.setText("2022.07.30");
+        date31.setText("2022.08.01");
+        date32.setText("2022.10.31");
+        info.setText("마을유래 : 열 개(開), 고개령(嶺)으로 산골짜기 개울가에 있는 작은 마을이라는 뜻의 '거렁'에서 유래되어 '개랭이'로 불리게 되었음.\n" +
+                "마을특징 : 고들빼기와 홍갓을 특화하여 관광객에 체험의 기회를 제공하고 있는 농촌체험휴양마을임\n" +
+                "마을 주력산업 : 6차산업인증으로 1차로 고들빼기생산, 2차로 고들빼기제품생산, 3차로 고들빼기 관련 체험관광산업 진행 중\n" +
+                "마을 현황 : 개랭이테마관, 개랭이황토방, 개랭이웰컴센터, 고들빼기제조 가공시설, 개랭이오토캠핑장 보유");
+        product.setText("고들빼기와 홍갓");
+        representative.setText("유성x");
+        phone.setText("061-745-4040");
+
+
+
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -60,8 +60,7 @@ public class MyPageFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CreateFarmingActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
-            }
+                 }
         });
 
         myKey = MainActivity.myKey;

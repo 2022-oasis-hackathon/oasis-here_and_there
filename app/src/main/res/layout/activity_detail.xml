@@ -16,6 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -53,9 +55,7 @@
         android:layout_below="@+id/top"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="25dp"
         android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
         android:layout_marginBottom="100dp">
 
         <LinearLayout
@@ -64,23 +64,25 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/chatButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/layout2"
-                    android:textColor="#ffffff"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/gmm"
-                    android:text="채팅하기"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_weight="1"/>
+<!--                <Button-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:id="@+id/chatButton"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/layout2"-->
+<!--                    android:textColor="#ffffff"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:fontFamily="@font/gmm"-->
+<!--                    android:text="채팅하기"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingRight="10dp"-->
+<!--                    android:layout_weight="1"/>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -90,16 +92,6 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/location"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/scdream5"
-                            android:text="location"
-                            android:textColor="#3D7244"
-                            android:textSize="17dp" />
-
                         <TextView
                             android:visibility="gone"
                             android:id="@+id/textView"
@@ -129,14 +121,42 @@
                         android:textColor="#000000"
                         android:textSize="20dp" />
 
-
                     <TextView
-                        android:id="@+id/detailLocation"
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
                         android:fontFamily="@font/scdream5"
-                        android:text="detailLocation" />
+                        android:text="location"
+                        android:textSize="17dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="운영기간" />
+
+                        <TextView
+                            android:id="@+id/date3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2022.07.15"
+                            android:fontFamily="@font/scd3" />
+                    </LinearLayout>
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/detailLocation"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="7dp"-->
+<!--                        android:fontFamily="@font/scdream5"-->
+<!--                        android:text="detailLocation" />-->
 
                 </LinearLayout>
             </RelativeLayout>
@@ -144,29 +164,72 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="4dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="#CFCECE" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상세정보"
+                android:textColor="#3D7244"
+                android:fontFamily="@font/scdream5"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                android:textSize="18dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="10dp"
+                android:background="#3D7244" />
+
+            <TextView
                 android:id="@+id/info"
+                android:layout_marginTop="7dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/scd2"
                 android:text="info"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:lineSpacingExtra="7dp"
                 android:textColor="#000000"
                 android:textSize="15dp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:orientation="vertical">
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="55dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="상세주소" />
+
+                    <TextView
+                        android:id="@+id/detailLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="detailLocation"
+                        android:fontFamily="@font/scdream5"
+                        android:textColor="#000000" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -188,6 +251,7 @@
                         android:fontFamily="@font/scdream5"
                         android:textColor="#000000" />
                 </LinearLayout>
+
 
 
                 <LinearLayout
@@ -232,25 +296,25 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="운영기간" />
+<!--                    <TextView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="운영기간" />-->
 
-                    <TextView
-                        android:id="@+id/date3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2022.07.15"
-                        android:fontFamily="@font/scdream5"
-                        android:textColor="#000000" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/date3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="2022.07.15"-->
+<!--                        android:fontFamily="@font/scdream5"-->
+<!--                        android:textColor="#000000" />-->
+<!--                </LinearLayout>-->
 
             </LinearLayout>
 
@@ -262,6 +326,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#ffffff"
         android:layout_alignParentBottom="true">
 
         <LinearLayout
@@ -269,57 +334,164 @@
             android:layout_height="1dp"
             android:background="#CFCECE"/>
 
-        <RelativeLayout
-            android:layout_centerInParent="true"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/bottomTop"
+            android:layout_gravity="center_vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+            android:layout_marginTop="20dp">
 
-            <LinearLayout
-
-                android:layout_gravity="center_vertical"
-                android:layout_centerVertical="true"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginRight="5dp">
+                android:fontFamily="@font/gmm"
+                android:textSize="20dp"
+                android:text="마을 대표자: "/>
 
-                <TextView
+            <TextView
+                android:id="@+id/representative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="강현x"
+                android:fontFamily="@font/gmm"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/bottomTop"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/chatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/loginbutton">
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/gmm"
-                    android:textSize="20dp"
-                    android:text="마을 대표자: "/>
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
 
-                <TextView
-                    android:id="@+id/representative"
+                    <ImageView
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/messageIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/messageicon"/>
+
+                    <TextView
+                        android:layout_marginLeft="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="채팅하기"
+                        android:fontFamily="@font/scd5"
+                        android:textSize="14dp"
+                        android:textColor="#ffffff"
+                        android:layout_toRightOf="@+id/messageIcon"/>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_toRightOf="@+id/chatButton"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/callButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/loginbutton">
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:text="강현x"
-                    android:fontFamily="@font/gmm"/>
-            </LinearLayout>
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
+
+                    <ImageView
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/callIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/phoneicon"/>
+
+                    <TextView
+                        android:layout_marginLeft="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전화문의"
+                        android:fontFamily="@font/scd5"
+                        android:textSize="14dp"
+                        android:textColor="#ffffff"
+                        android:layout_toRightOf="@+id/callIcon"/>
 
 
+                </LinearLayout>
 
-                <Button
-                    android:layout_alignParentRight="true"
-                    android:id="@+id/callButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/loginbutton"
-                    android:textColor="#ffffff"
-                    android:fontFamily="@font/gmm"
-                    android:text="전화문의"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
+            </RelativeLayout>
 
-                    android:layout_marginRight="5dp"/>
+<!--            <Button-->
+<!--                android:id="@+id/chatButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/loginbutton"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:fontFamily="@font/gmm"-->
+<!--                android:text="채팅하기"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_weight="1"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginRight="5dp">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/gmm"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text="마을 대표자: "/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/representative"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text="강현x"-->
+<!--                    android:fontFamily="@font/gmm"/>-->
+<!--            </LinearLayout>-->
+
+
 
 
 

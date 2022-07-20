@@ -203,18 +203,6 @@
 
     </LinearLayout>
 
-<!--    <EditText-->
-<!--        android:layout_below="@+id/fil"-->
-<!--        android:id="@+id/search"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:background="@drawable/search_layout"-->
-<!--        android:paddingLeft="15dp"-->
-<!--        android:hint="지역 검색"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginLeft="10dp"-->
-<!--        android:layout_marginRight="10dp"/>-->
 
     <LinearLayout
         android:id="@+id/second"
