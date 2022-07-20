@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     // test
     //안녕아아아
 
+    // gdgd
+
     public static String TAG = "MainActivity";
     BottomNavigationView bottomNavigationView;
 
