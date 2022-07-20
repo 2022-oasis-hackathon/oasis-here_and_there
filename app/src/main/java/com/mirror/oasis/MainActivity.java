@@ -18,6 +18,7 @@ import com.mirror.oasis.pre.PreFragment;
 public class MainActivity extends AppCompatActivity {
 
     // test
+    //안녕아아아
 
     public static String TAG = "MainActivity";
     BottomNavigationView bottomNavigationView;
