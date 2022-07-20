@@ -122,6 +122,7 @@ public class ChatActivity extends AppCompatActivity {
 
     public void init() {
         chatDataList.clear();
+        Log.d(TAG, key);
         myRef.child(key).child("chat").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {

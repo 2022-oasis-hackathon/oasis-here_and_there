@@ -42,6 +42,7 @@ public class ChatFragment extends Fragment {
     List<ChatListData> chatListDataList = new ArrayList<>();
 
     String myId;
+    String myNickName;
 
     String key = "";
     String userId;
@@ -50,12 +51,15 @@ public class ChatFragment extends Fragment {
     String userNickName;
     String lastMessage;
 
+    ChatListData chatListData;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_chat, container, false);
 
         myId = MainActivity.myId;
+        myNickName = MainActivity.myNickName;
 
         init();
 
@@ -137,17 +141,13 @@ public class ChatFragment extends Fragment {
 
                     for (DataSnapshot snapshot2: snapshot1.getChildren()) {
                         // snapshot2 key: chat, info, users   value :
-
-
                         // users ==> myId
                         if (snapshot2.getKey().equals("users")) {
                             Users users = snapshot2.getValue(Users.class);
-                            System.out.println("!!!!!!!!!!!!!!!!!! " + myId);
+
                             if (users.getUser1().equals(MainActivity.myNickName) || users.getUser2().equals(MainActivity.myNickName)) {
                                 key = snapshot1.getKey();
-                                System.out.println(users.getUser1());
-                                System.out.println(users.getUser2());
-
+                                System.out.println("users: " + users.getUser1() + " " + users.getUser2());
                                 if (users.getUser1().equals(MainActivity.myNickName)) {
                                     userNickName = users.getUser2();
                                 } else {
@@ -163,51 +163,43 @@ public class ChatFragment extends Fragment {
                                     }
                                 }
 
-//                                for (DataSnapshot snapshot4: snapshot1.child("info").getChildren()) {
-//                                    StoreData storeData1 = snapshot4.getValue(StoreData.class);
-//                                    title = storeData1.getTitle();
-//                                    uri  = storeData1.getFirstUri();
-//                                    break;
-//                                }
-                            }
-                            /*
-                                String key = "";
-    String userId;
-    String userProfile;
-    String userKey;
-    String userNickName;
-                             */
+                                userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot snapshot) {
+                                        for(DataSnapshot snapshot1: snapshot.getChildren()) {
+                                            UserInfo value = snapshot1.getValue(UserInfo.class);
+                                            if (value.getNickName().equals(userNickName)) {
 
-                            System.out.println("~~~~~~~~~~~~~~~~!!!!!~!~!~!~!~!~!~!~~~~~~~~~~~~~~~~~~~~~~`");
-                            System.out.println(key);
-                            System.out.println(userNickName);
-                            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot snapshot) {
-                                    for(DataSnapshot snapshot1: snapshot.getChildren()) {
-                                        UserInfo value = snapshot1.getValue(UserInfo.class);
-                                        if (value.getNickName().equals(userNickName)) {
+                                                userId = value.getId();
+                                                userProfile = value.getProfileUri();
+                                                userKey = value.getKey();
+                                                chatListData = new ChatListData(key, userId, userProfile, userKey, userNickName, lastMessage);
+                                                chatListDataList.add(chatListData);
+                                                System.out.println(userId + " " + userProfile + " " + userKey + " " + userNickName + "$$$$$$$$$$$");
+                                                // String key, String userId, String userProfile, String userKey, String userNickName, String lastMessage
+                                                break;
 
-                                            userId = value.getId();
-                                            userProfile = value.getProfileUri();
-                                            userKey = value.getKey();
-                                            // String key, String userId, String userProfile, String userKey, String userNickName, String lastMessage
-                                            ChatListData chatListData = new ChatListData(key, userId, userProfile, userKey, userNickName, lastMessage);
-                                            System.out.println(userId + " " + userProfile + " " + userKey + " " + userNickName + "$$$$$$$$$$$");
-                                            chatListDataList.add(chatListData);
-                                            chatListAdapter.notifyDataSetChanged();
+
+
+                                            }
                                         }
 
+                                        chatListAdapter.notifyDataSetChanged();
+
                                     }
-                                }
 
-                                @Override
-                                public void onCancelled(DatabaseError error) {
-                                }
-                            });
-
+                                    @Override
+                                    public void onCancelled(DatabaseError error) {
+                                    }
+                                });
 
 
+
+
+
+                                //ChatListData chatListData = new ChatListData(key, userId, userProfile, userKey, userNickName, lastMessage);
+                                //chatListDataList.add(chatListData);
+                            }
 
                         }
                     }
